@@ -7,6 +7,7 @@ import {auth} from './screens/Auth';
 import { signOut } from 'firebase/auth';
 import Tabs from './components/Tabs';
 import React from 'react';
+import ForgotPassword from './screens/ForgotPassword';
 
 
 
@@ -54,6 +55,10 @@ export default function App() {
               headerRight: () => <LogOutButton navigation={navigation}/>,
             })
           }/>
+          <Stack.Screen
+          name='ForgotPassword'
+          component={ForgotPassword}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       );

@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { auth } from './Auth';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import WelcomeImage from '../components/welcome_image';
+import { ClientRequest } from 'http';
 
 const RegisterPage = ({navigation}: any) => {
     const [email, setEmail] = useState<string>('');
@@ -58,12 +59,20 @@ const RegisterPage = ({navigation}: any) => {
         onChangeText={setConfirmPassword}
         secureTextEntry
         />
-        <Button
-        title="Register"
-        onPress={onRegister}
-        color={'blue'}
 
-         />
+       <TouchableOpacity 
+        style={{ 
+            width: '80%', 
+            alignSelf: 'center', 
+            backgroundColor: '#5e9cfa', 
+            padding: 10, 
+            borderRadius: 5 
+        }}
+        onPress={onRegister}
+        >
+        <Text style={{ color: 'white', textAlign: 'center' }}>Register</Text>
+        </TouchableOpacity>
+        
         <TouchableOpacity
         onPress={() =>{
             navigation.pop();
@@ -96,7 +105,9 @@ const styles = StyleSheet.create({
     },
     register_button:{
         marginHorizontal:40,
-        backgroundColor: 'blue',
+        backgroundColor: '#5e9cfa',
+        padding: 10,
+        alignItems: 'center',
     },
     login_button:{
         textAlign: 'center',
